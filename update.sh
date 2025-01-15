@@ -1,15 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
-if [ -e Makefile ]
-then
-    make distclean
-fi
+export EDITOR=vin
+git config --global user.email ab25cq@icloud.com
+git config --global user.name ab25cq
 
-if [ ! -e Makefile ]
-then
-    git add .
-    git commit 
-    git remote add origin https://github.com/ab25cq/vin
-    git push -f -u origin master
-fi
+git add .
+git commit 
+git remote set-url origin git@github.com:ab25cq/vin.git
+git push -f -u origin master
 
